@@ -4,4 +4,7 @@ arguments and return their sum as a float."""
 
 
 def add(a: float, b: float) -> float:
+    """
+        return the sum of two foloat
+    """
     return a + b
