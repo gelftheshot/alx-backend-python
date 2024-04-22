@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' 
+'''
     maeasur the running time for a_wait function
 '''
 
