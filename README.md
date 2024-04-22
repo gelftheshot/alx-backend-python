@@ -1,1 +1,1 @@
-this is the readme file for alx backend programming using python
+this is the readme file for 0x00-python variable annotations
