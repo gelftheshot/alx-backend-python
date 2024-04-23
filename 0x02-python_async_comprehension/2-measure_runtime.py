@@ -1,13 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
-""" the comment seciton """
+""" measure the time for excution of the functions """
 import time
 import asyncio
 async_comprehension = __import__("1-async_comprehension").async_comprehension
 
 
 async def measure_runtime():
-    """ the comment section """
+    """ measure the tim taken for comprtion"""
     time_0 = time.time()
     await asyncio.gather(
             async_comprehension(), async_comprehension(),
