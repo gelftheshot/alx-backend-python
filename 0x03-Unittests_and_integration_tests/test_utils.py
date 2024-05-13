@@ -14,3 +14,10 @@ class TestAccessNestedMap(unittest.TestCase):
         """ the main method to test """
         result = access_nested_map(nested_map, path)
         self.assertEqual(result, e_result)
+    
+    @parameterized.expand([({}, ("a",), KeyError),
+                        ({"a", 1}, ("a", "b"), KeyError),])
+    def test_access_nested_map_exception(self, nested_map, path, e_error):
+        """ the excepting checker """
+        with self.assertRaises(e_error):
+            access_nested_map(nested_map, path)
