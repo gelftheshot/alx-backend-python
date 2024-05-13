@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 GithubOrgClient = __import__('client').GithubOrgClient
 import unittest
 from parameterized import parameterized
