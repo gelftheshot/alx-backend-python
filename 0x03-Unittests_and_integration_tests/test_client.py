@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-GithubOrgClient = __import__('client').GithubOrgClient
 import unittest
-from parameterized import parameterized
+from parameterized import parameterized, parameterized_class
+from unittest.mock import patch, Mock, PropertyMock, call
+import requests
 from unittest.mock import patch, Mock
-
+import utils
+from utils import access_nested_map, get_json, memoize
+from client import GithubOrgClient
+import client
+from fixtures import TEST_PAYLOAD
 class TestGithubOrgClient(unittest.TestCase):
     """ a class to test githuborg client"""
 
@@ -29,7 +34,7 @@ class TestGithubOrgClient(unittest.TestCase):
             cli = GithubOrgClient("x")
             self.assertEqual(cli._public_repos_url, expected)
     
-        @patch('client.get_json')
+    @patch('client.get_json')
     def test_public_repos(self, get_json_mock):
         """ test the public repos """
         jeff = {"name": "Jeff", "license": {"key": "a"}}
