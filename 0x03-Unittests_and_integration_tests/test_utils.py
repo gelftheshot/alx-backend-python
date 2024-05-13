@@ -46,6 +46,7 @@ class TestMemoize(unittest.TestCase):
     """ testing the memoizetion function is working or not """
     
     def test_memoize(self):
+        """ TESTING if memoize momoize or not """
         class TestClass:
 
             def a_method(self):
