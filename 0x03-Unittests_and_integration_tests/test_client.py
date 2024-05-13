@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" a test class for utils in test_utils file """
 import unittest
 from parameterized import parameterized, parameterized_class
 from unittest.mock import patch, Mock, PropertyMock, call
@@ -9,9 +10,10 @@ from utils import access_nested_map, get_json, memoize
 from client import GithubOrgClient
 import client
 from fixtures import TEST_PAYLOAD
+
+
 class TestGithubOrgClient(unittest.TestCase):
     """ a class to test githuborg client"""
-
 
     @parameterized.expand([
         ("google", {"google": True}),
@@ -33,7 +35,7 @@ class TestGithubOrgClient(unittest.TestCase):
         with patch(to_mock, PropertyMock(return_value=payload)):
             cli = GithubOrgClient("x")
             self.assertEqual(cli._public_repos_url, expected)
-    
+
     @patch('client.get_json')
     def test_public_repos(self, get_json_mock):
         """ test the public repos """
