@@ -4,9 +4,9 @@
     and return the tuple of them
 """
 from typing import Union
+from typing import Tuple
 
-
-def to_kv(k: int, v:Union[int, float]) -> tuple:
+def to_kv(k: str, v:Union[int, float]) -> Tuple:
     """
         return tuple of the k and v
     """
